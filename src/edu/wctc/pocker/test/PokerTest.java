@@ -1,4 +1,4 @@
-/*package edu.wctc.pocker.test;
+package edu.wctc.pocker.test;
 
 import edu.wctc.pocker.Card;
 import edu.wctc.pocker.Deck;
@@ -17,11 +17,11 @@ class PokerTest {
 
     @BeforeEach
     void runIt() {
-        hand.add(deck.getCard(2));
+        hand.add(deck.getCard(8));
         hand.add(deck.getCard(9));
-        hand.add(deck.getCard(4));
-        hand.add(deck.getCard(5));
-        hand.add(deck.getCard(6));
+        hand.add(deck.getCard(10));
+        hand.add(deck.getCard(11));
+        hand.add(deck.getCard(12));
     }
     @org.junit.jupiter.api.Test
     void isStraight() {
@@ -32,4 +32,19 @@ class PokerTest {
     void isStraightFlush() {
         assertTrue(poker.isStraightFlush(hand));
     }
-}*/
+
+    @org.junit.jupiter.api.Test
+    void isRoyalFlush() {
+        assertTrue(poker.isRoyalFlush(hand));
+    }
+
+    @org.junit.jupiter.api.Test
+    void isFlush() {
+        assertTrue(poker.isFlush(hand));
+    }
+
+    @org.junit.jupiter.api.Test
+    void isHighCard() {
+        assertTrue(poker.isHighCard(hand));
+    }
+}
